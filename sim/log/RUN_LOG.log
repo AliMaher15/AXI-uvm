@@ -1,0 +1,179 @@
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 22:02:10 on Dec 27,2023
+# vlog -reportprogress 300 -f scripts/dut.f 
+# -- Compiling module data_sampling
+# -- Compiling module deserializer
+# -- Compiling module edge_bit_counter
+# -- Compiling module par_chk
+# -- Compiling module strt_chk
+# -- Compiling module stp_chk
+# -- Compiling module uart_rx_fsm
+# -- Compiling module UART_RX
+# -- Compiling module mux
+# -- Compiling module parity_calc
+# -- Compiling module Serializer
+# -- Compiling module uart_tx_fsm
+# -- Compiling module UART_TX
+# -- Compiling module UART
+# 
+# Top level modules:
+# 	UART
+# End time: 22:02:11 on Dec 27,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 22:02:11 on Dec 27,2023
+# vlog -reportprogress 300 -f scripts/tb.f 
+# -- Compiling package uart_rx_global_params_pkg
+# -- Compiling package uart_rx_item_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) D:/Ali/Courses/Verification-Projects/UART-UVM/uart_rx_tb/uart_rx_item/uart_rx_item_pkg.sv(4): Using implicit +incdir+C:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# -- Importing package uart_rx_global_params_pkg
+# -- Compiling package uart_rx_agent_pkg
+# -- Importing package uart_rx_item_pkg
+# -- Compiling interface uart_rx_if
+# -- Compiling package uart_rx_usertypes_pkg
+# -- Importing package uart_rx_agent_pkg
+# -- Compiling package uart_rx_tb_pkg
+# -- Importing package uart_rx_usertypes_pkg
+# -- Compiling package uart_rx_seq_pkg
+# -- Importing package uart_rx_tb_pkg
+# -- Compiling module uart_rx_assertions
+# -- Compiling package uart_tx_global_params_pkg
+# -- Compiling package uart_tx_item_pkg
+# -- Importing package uart_tx_global_params_pkg
+# -- Compiling package uart_tx_agent_pkg
+# -- Importing package uart_tx_item_pkg
+# -- Compiling interface uart_tx_if
+# -- Compiling package uart_tx_usertypes_pkg
+# -- Importing package uart_tx_agent_pkg
+# -- Compiling package uart_tx_tb_pkg
+# -- Importing package uart_tx_usertypes_pkg
+# -- Compiling package uart_tx_seq_pkg
+# -- Importing package uart_tx_tb_pkg
+# -- Compiling module uart_tx_assertions
+# -- Compiling package uart_top_global_params_pkg
+# -- Compiling package uart_top_tb_pkg
+# -- Importing package uart_top_global_params_pkg
+# -- Compiling package uart_top_test_pkg
+# -- Importing package uart_rx_seq_pkg
+# -- Importing package uart_tx_seq_pkg
+# -- Importing package uart_top_tb_pkg
+# -- Compiling interface uart_top_system_if
+# -- Compiling module uart_top_tb_top
+# -- Importing package uart_top_test_pkg
+# 
+# Top level modules:
+# 	uart_top_tb_top
+# End time: 22:02:12 on Dec 27,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vopt 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 22:02:12 on Dec 27,2023
+# vopt -reportprogress 300 uart_top_tb_top -o top_opt -debugdb "+acc" "+cover=sbecf+UART(rtl)." 
+# ** Warning: (vopt-31) Unable to unlink file "D:/Ali/Courses/Verification-Projects/UART-UVM/sim/uart/work/top_opt/_lib.qdb".
+# ** Warning: (vopt-133) Unable to remove directory "D:/Ali/Courses/Verification-Projects/UART-UVM/sim/uart/work/top_opt".
+# 
+# Top level modules:
+# 	uart_top_tb_top
+# 
+# Analyzing design...
+# -- Loading module uart_top_tb_top
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package uart_top_global_params_pkg
+# -- Importing package uart_top_tb_pkg
+# -- Importing package uart_rx_tb_pkg
+# -- Importing package uart_rx_item_pkg
+# -- Importing package uart_rx_global_params_pkg
+# -- Importing package uart_rx_agent_pkg
+# -- Importing package uart_rx_usertypes_pkg
+# -- Importing package uart_tx_tb_pkg
+# -- Importing package uart_tx_item_pkg
+# -- Importing package uart_tx_global_params_pkg
+# -- Importing package uart_tx_agent_pkg
+# -- Importing package uart_tx_usertypes_pkg
+# -- Importing package uart_top_test_pkg
+# -- Importing package uart_rx_seq_pkg
+# -- Importing package uart_tx_seq_pkg
+# -- Loading package mtiUvm.questa_uvm_pkg
+# -- Loading interface uart_rx_if
+# -- Loading interface uart_tx_if
+# -- Loading interface uart_top_system_if
+# -- Loading module UART
+# -- Loading module UART_TX
+# -- Loading module uart_tx_fsm
+# -- Loading module Serializer
+# -- Loading module parity_calc
+# -- Loading module mux
+# -- Loading module UART_RX
+# -- Loading module uart_rx_fsm
+# -- Loading module edge_bit_counter
+# -- Loading module data_sampling
+# -- Loading module deserializer
+# -- Loading module strt_chk
+# -- Loading module par_chk
+# -- Loading module stp_chk
+# -- Loading module uart_rx_assertions
+# -- Loading module uart_tx_assertions
+# init_auxdbinfo(): INTERNAL ERROR: Cannot open page file "D:/Ali/Courses/Verification-Projects/UART-UVM/sim/uart/work/top_opt/_lib1_0.qpg" in read mode
+# Optimizing 40 design-units (inlining 0/20 module instances):
+# -- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
+# -- Optimizing package mtiUvm.questa_uvm_pkg(fast)
+# -- Optimizing package uart_top_global_params_pkg(fast)
+# -- Optimizing package uart_rx_global_params_pkg(fast)
+# -- Optimizing package uart_rx_item_pkg(fast)
+# -- Optimizing package uart_rx_agent_pkg(fast)
+# -- Optimizing package uart_rx_usertypes_pkg(fast)
+# -- Optimizing package uart_rx_tb_pkg(fast)
+# -- Optimizing package uart_tx_global_params_pkg(fast)
+# -- Optimizing package uart_tx_item_pkg(fast)
+# -- Optimizing package uart_tx_agent_pkg(fast)
+# -- Optimizing package uart_tx_usertypes_pkg(fast)
+# -- Optimizing package uart_tx_tb_pkg(fast)
+# -- Optimizing package uart_top_tb_pkg(fast)
+# -- Optimizing package uart_rx_seq_pkg(fast)
+# -- Optimizing package uart_tx_seq_pkg(fast)
+# -- Optimizing package uart_top_test_pkg(fast)
+# -- Optimizing module uart_rx_fsm(fast)
+# -- Processing module uart_rx_fsm(fast) for debug
+# ** Note: (vopt-143) Recognized 1 FSM in module "uart_rx_fsm(fast)".
+# -- Optimizing module uart_tx_fsm(fast)
+# -- Processing module uart_tx_fsm(fast) for debug
+# ** Note: (vopt-143) Recognized 1 FSM in module "uart_tx_fsm(fast)".
+# -- Optimizing module uart_top_tb_top(fast)
+# -- Processing module uart_top_tb_top(fast) for debug
+# -- Optimizing module uart_tx_assertions(fast)
+# -- Processing module uart_tx_assertions(fast) for debug
+# -- Optimizing module data_sampling(fast)
+# -- Processing module data_sampling(fast) for debug
+# -- Optimizing module UART_RX(fast)
+# -- Processing module UART_RX(fast) for debug
+# -- Optimizing module Serializer(fast)
+# -- Processing module Serializer(fast) for debug
+# -- Optimizing module UART(fast)
+# -- Processing module UART(fast) for debug
+# -- Optimizing module uart_rx_assertions(fast)
+# -- Processing module uart_rx_assertions(fast) for debug
+# -- Optimizing module edge_bit_counter(fast)
+# -- Processing module edge_bit_counter(fast) for debug
+# -- Optimizing module UART_TX(fast)
+# -- Processing module UART_TX(fast) for debug
+# -- Optimizing module par_chk(fast)
+# -- Processing module par_chk(fast) for debug
+# -- Optimizing module parity_calc(fast)
+# -- Processing module parity_calc(fast) for debug
+# -- Optimizing module mux(fast)
+# -- Processing module mux(fast) for debug
+# -- Optimizing module deserializer(fast)
+# -- Processing module deserializer(fast) for debug
+# -- Optimizing module stp_chk(fast)
+# -- Processing module stp_chk(fast) for debug
+# -- Optimizing interface uart_rx_if(fast__2)
+# -- Optimizing module strt_chk(fast)
+# -- Processing module strt_chk(fast) for debug
+# -- Optimizing interface uart_tx_if(fast__2)
+# -- Optimizing interface uart_top_system_if(fast__2)
+# -- Optimizing interface uart_rx_if(fast)
+# -- Optimizing interface uart_tx_if(fast)
+# -- Optimizing interface uart_top_system_if(fast)
+# Optimized design name is top_opt
+# End time: 22:02:18 on Dec 27,2023, Elapsed time: 0:00:06
+# Errors: 0, Warnings: 2
