@@ -1,0 +1,164 @@
+# vsim top_opt -c -assertdebug -debugDB -fsmdebug -coverage "+UVM_TESTNAME=axi_test_c" 
+# Start time: 00:05:09 on Jan 02,2024
+# Loading sv_std.std
+# Loading work.axi_master_intf(fast)
+# Loading work.axi_slave_intf(fast)
+# Loading work.rst_intf(fast)
+# Loading work.axi_global_params_pkg(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.axi_item_pkg(fast)
+# Loading work.axi_slave_agent_pkg(fast)
+# Loading work.axi_master_agent_pkg(fast)
+# Loading work.axi_usertypes_pkg(fast)
+# Loading work.axi_tb_pkg(fast)
+# Loading work.axi_seq_pkg(fast)
+# Loading work.axi_test_pkg(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.axi_tb_top(fast)
+# Loading work.rst_intf(fast__2)
+# Loading work.axi_master_intf(fast__2)
+# Loading work.axi_slave_intf(fast__2)
+# Loading work.axis_m(fast)
+# Loading work.axis_s(fast)
+# ** Warning: (vsim-3764) Stand-alone call to function 'read_by_name' treated as implicit void cast.
+#    Time: 0 ps  Iteration: 0  Region: /axi_tb_pkg::rst_driver_c File: D:/Ali/Courses/Verification-Projects/AXI-uvm/tb/rst_driver_c.svh Line: 32
+# Loading C:/questasim64_2021.1/uvm-1.1d\win64\uvm_dpi.dll
+# ** Note: (vsim-8900) Creating design debug database vsim.dbg.
+# 1
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test axi_test_c...
+# -------------------------------------------------------------------
+# Name                       Type                       Size  Value  
+# -------------------------------------------------------------------
+# uvm_test_top               axi_test_c                 -     @483   
+#   m_axi_env                axi_env_c                  -     @499   
+#     m_axi_master_agent     uvm_agent                  -     @542   
+#       axi_master_ap        uvm_analysis_port          -     @549   
+#       m_driver             uvm_driver #(REQ,RSP)      -     @856   
+#         rsp_port           uvm_analysis_port          -     @871   
+#         seq_item_port      uvm_seq_item_pull_port     -     @863   
+#       m_monitor            uvm_monitor                -     @732   
+#         axi_master_mon_ap  uvm_analysis_port          -     @739   
+#       m_seqr               axi_master_agent_seqr_c    -     @747   
+#         rsp_export         uvm_analysis_export        -     @754   
+#         seq_item_export    uvm_seq_item_pull_imp      -     @848   
+#         arbitration_queue  array                      0     -      
+#         lock_queue         array                      0     -      
+#         num_last_reqs      integral                   32    'd1    
+#         num_last_rsps      integral                   32    'd1    
+#     m_axi_slave_agent      uvm_agent                  -     @557   
+#       axi_slave_ap         uvm_analysis_port          -     @564   
+#       m_driver             uvm_driver #(REQ,RSP)      -     @1011  
+#         rsp_port           uvm_analysis_port          -     @1026  
+#         seq_item_port      uvm_seq_item_pull_port     -     @1018  
+#       m_monitor            uvm_monitor                -     @887   
+#         axi_slave_mon_ap   uvm_analysis_port          -     @894   
+#       m_seqr               axi_slave_agent_seqr_c     -     @902   
+#         rsp_export         uvm_analysis_export        -     @909   
+#         seq_item_export    uvm_seq_item_pull_imp      -     @1003  
+#         arbitration_queue  array                      0     -      
+#         lock_queue         array                      0     -      
+#         num_last_reqs      integral                   32    'd1    
+#         num_last_rsps      integral                   32    'd1    
+#     m_coverage             axi_coverage_c             -     @704   
+#       axi_m_in_imp         uvm_analysis_imp_axi_m_in  -     @715   
+#       axi_s_in_imp         uvm_analysis_imp_axi_s_in  -     @723   
+#     m_scoreboard           axi_scoreboard_c           -     @681   
+#       axi_m_imp            uvm_analysis_imp_axi_m     -     @688   
+#       axi_s_imp            uvm_analysis_imp_axi_s     -     @696   
+#     m_vseqr                axi_vsequencer_c           -     @572   
+#       rsp_export           uvm_analysis_export        -     @579   
+#       seq_item_export      uvm_seq_item_pull_imp      -     @673   
+#       arbitration_queue    array                      0     -      
+#       lock_queue           array                      0     -      
+#       num_last_reqs        integral                   32    'd1    
+#       num_last_rsps        integral                   32    'd1    
+#   m_rst_drv                rst_driver_c               -     @506   
+#     rsp_port               uvm_analysis_port          -     @521   
+#     seq_item_port          uvm_seq_item_pull_port     -     @513   
+#     intf_name              string                     5     rst_i  
+#     reset_time_ps          integral                   32    'd62013
+# -------------------------------------------------------------------
+# 
+#### Factory Configuration (*)
+# 
+#   No instance or type overrides are registered with this factory
+# 
+# All types registered with the factory: 63 total
+# (types without type names will not be printed)
+# 
+#   Type Name
+#   ---------
+#   active_reset_test_c
+#   axi_base_seq_c
+#   axi_base_test_c
+#   axi_coverage_c
+#   axi_env_c
+#   axi_env_cfg_c
+#   axi_item_c
+#   axi_master_agent_seqr_c
+#   axi_scoreboard_c
+#   axi_seq_c
+#   axi_slave_agent_seqr_c
+#   axi_test_c
+#   axi_test_vseq_c
+#   axi_vseq_base_c
+#   axi_vsequencer_c
+#   idle_reset_test_c
+#   questa_uvm_recorder
+#   rst_driver_c
+# (*) Types with no associated type name will be printed as <unknown>
+# 
+####
+# 
+# UVM_INFO D:/Ali/Courses/Verification-Projects/AXI-uvm/tb/test_lib//axi_test_c.svh(26) @ 0: uvm_test_top [uvm_test_top] Starting test
+# UVM_INFO D:/Ali/Courses/Verification-Projects/AXI-uvm/tb/test_lib//axi_test_c.svh(28) @ 0: uvm_test_top [uvm_test_top] Executing axi_test_vseq_c
+# UVM_INFO D:/Ali/Courses/Verification-Projects/AXI-uvm/tb/rst_driver_c.svh(38) @ 0: uvm_test_top.m_rst_drv [rst] Going down.
+# UVM_INFO D:/Ali/Courses/Verification-Projects/AXI-uvm/tb/rst_driver_c.svh(42) @ 62013: uvm_test_top.m_rst_drv [rst] Going up.
+# UVM_INFO D:/Ali/Courses/Verification-Projects/AXI-uvm/tb/test_lib//axi_test_c.svh(30) @ 790000: uvm_test_top [uvm_test_top] axi_test_vseq_c complete
+# UVM_INFO D:/Ali/Courses/Verification-Projects/AXI-uvm/tb/test_lib//axi_test_c.svh(33) @ 1190000: uvm_test_top [uvm_test_top] Ending test
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 1190000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO D:/Ali/Courses/Verification-Projects/AXI-uvm/tb/axi_checkers/axi_scoreboard_c.svh(103) @ 1190000: uvm_test_top.m_axi_env.m_scoreboard [uvm_test_top.m_axi_env.m_scoreboard] master_outputs_count 0
+# UVM_INFO D:/Ali/Courses/Verification-Projects/AXI-uvm/tb/axi_checkers/axi_scoreboard_c.svh(104) @ 1190000: uvm_test_top.m_axi_env.m_scoreboard [uvm_test_top.m_axi_env.m_scoreboard] master_data_error_count 0
+# UVM_INFO D:/Ali/Courses/Verification-Projects/AXI-uvm/tb/axi_checkers/axi_scoreboard_c.svh(105) @ 1190000: uvm_test_top.m_axi_env.m_scoreboard [uvm_test_top.m_axi_env.m_scoreboard] slave_outputs_count 0
+# UVM_INFO D:/Ali/Courses/Verification-Projects/AXI-uvm/tb/axi_checkers/axi_scoreboard_c.svh(106) @ 1190000: uvm_test_top.m_axi_env.m_scoreboard [uvm_test_top.m_axi_env.m_scoreboard] slave_data_error_count 0
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   14
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# [rst]     2
+# [uvm_test_top]     4
+# [uvm_test_top.m_axi_env.m_scoreboard]     4
+# ** Note: $finish    : C:/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 1190 ns  Iteration: 54  Instance: /axi_tb_top
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at C:/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430

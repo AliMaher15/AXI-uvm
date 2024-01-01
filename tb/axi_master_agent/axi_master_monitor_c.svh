@@ -7,85 +7,104 @@ class axi_master_monitor_c#(DATA_WIDTH = 32) extends uvm_monitor;
 	  axi_master_agent_cfg_c  #(DATA_WIDTH)   m_cfg;
 
     // Analysis Ports
-    uvm_analysis_port #(axi_item) input_ap;
-    uvm_analysis_port #(axi_item) output_ap;
+    uvm_analysis_port #(axi_item_c) axi_master_mon_ap;
 
-    axi_item     m_in_item;
-    axi_item     m_out_item;
+    axi_item_c     m_item;
+
+    bit [DATA_WIDTH-1:0]    old_data_in = 0;
+    bit                     old_send_in = 0;
+    bit                     old_tready_in = 0;
     
 
     // Counstructor
     function new(string name, uvm_component parent);
         super.new(name,parent);
+        axi_master_mon_ap = new("axi_master_mon_ap", this);
     endfunction
 
     //  Function: build_phase
     extern function void build_phase(uvm_phase phase);
     //  Task: run_phase
     extern task run_phase(uvm_phase phase);
-    // Task: input_monitor_run
-    extern task input_monitor_run();
-    // Task: output_monitor_run
-    extern task output_monitor_run();
+    // Task: monitor_run
+    extern task monitor_run();
     // Function: cleanup
     extern function void cleanup();
 
 endclass : axi_master_monitor_c
 
+
+// Function: build_phase
 function void axi_master_monitor_c::build_phase(uvm_phase phase);
     // check configuration
     if(!uvm_config_db#(axi_master_agent_cfg_c #(DATA_WIDTH))::get(this, "", "axi_master_agent_cfg_t", m_cfg))
         `uvm_fatal(get_full_name(), "Failed to get agent_cfg from database")
 
     vif = m_cfg.vif;
-    input_ap = new("input_ap", this);
-    output_ap = new("output_ap", this);
 endfunction: build_phase
 
+
+// Task: run_phase
 task axi_master_monitor_c::run_phase(uvm_phase phase);
     forever begin
-      @(posedge vif.reset_n);
+      @(posedge vif.areset_n);
 
       fork
-        input_monitor_run();
-        output_monitor_run();
+        monitor_run();
       join_none
 
-      @(negedge vif.reset_n);
+      @(negedge vif.areset_n);
       disable fork;
       cleanup();
     end   
 endtask: run_phase
 
 
-task axi_master_monitor_c::input_monitor_run();
+// Task: monitor_run
+task axi_master_monitor_c::monitor_run();
     forever begin
-      m_in_item = axi_item::type_id::create("m_in_item");
+      m_item = axi_item_c::type_id::create("m_item");
+
+      m_item.delay = 0;
   
-      @(posedge vif.clk);
+      @(posedge vif.aclk);
+      while (old_data_in   == vif.data_in &&
+             old_send_in   == vif.send_in &&
+             old_tready_in == vif.tready_in) begin
+              m_item.delay++;
+        @(posedge vif.aclk);
+      end
+      m_item.user_data = vif.data_in;
+      m_item.send_master = vif.send_in;
+      m_item.tready = vif.tready_in;
+
+      old_data_in = vif.data_in;
+      old_send_in = vif.send_in;
+      old_tready_in = vif.tready_in;
+
+      // master outputs to slave
+      m_item.tdata  = vif.tdata_out;
+      m_item.tvalid = vif.tvalid_out;
+      m_item.tlast  = vif.tlast_out;
+
+      // master outputs to observe
+      m_item.finish = vif.finish_out;
       
+      axi_master_mon_ap.write(m_item);
     end
-endtask: input_monitor_run
+endtask: monitor_run
 
 
-task axi_master_monitor_c::output_monitor_run();
-    forever begin
-      m_out_item = axi_item::type_id::create("m_out_item");
-  
-      @(posedge vif.clk);
-      
-    end
-endtask: output_monitor_run
-
-
+// Function: cleanup
 function void axi_master_monitor_c::cleanup();
-  m_in_item = axi_item::type_id::create("m_in_item");
-  m_out_item = axi_item::type_id::create("m_out_item");
+  old_data_in = 0;
+  old_send_in = 0;
+  old_tready_in = 0;
 
-  m_in_item.rst_op = 1;
-  m_out_item.rst_op = 1;
+  m_item = axi_item_c::type_id::create("m_item");
 
-  input_ap.write(m_in_item);
-  output_ap.write(m_out_item);
+  m_item.rst_op = 1;
+
+  axi_master_mon_ap.write(m_item);
 
 endfunction : cleanup

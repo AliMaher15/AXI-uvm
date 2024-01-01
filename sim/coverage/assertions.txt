@@ -1,32 +1,8 @@
 Coverage Report by instance with details
 
 =================================================================================
-=== Instance: /uart_top_tb_top/dut/U0_UART_TX/uart_tx_sva
-=== Design Unit: work.uart_tx_assertions
-=================================================================================
-
-Assertion Coverage:
-    Assertions                       4         4         0   100.00%
---------------------------------------------------------------------------------------------------------------------------------
-Name                 File(Line)                   Failure      Pass     Vacuous    Disable    Attempt     Active Peak Active ATV
-                                                  Count        Count    Count      Count      Count       Count  Count          
---------------------------------------------------------------------------------------------------------------------------------
-/uart_top_tb_top/dut/U0_UART_TX/uart_tx_sva/uart_tx_reset_assertion
-                     D:/Ali/Courses/Verification-Projects/UART-UVM/uart_tx_tb/uart_tx_assertions.sv(30)
-                                                        0          1          0          0          1          0           1 off
-/uart_top_tb_top/dut/U0_UART_TX/uart_tx_sva/data_valid_high_1_clk
-                     D:/Ali/Courses/Verification-Projects/UART-UVM/uart_tx_tb/uart_tx_assertions.sv(35)
-                                                        0         50        668          1        719          0           1 off
-/uart_top_tb_top/dut/U0_UART_TX/uart_tx_sva/s_data_high_during_idle
-                     D:/Ali/Courses/Verification-Projects/UART-UVM/uart_tx_tb/uart_tx_assertions.sv(38)
-                                                        0        199        518          1        719          1           2 off
-/uart_top_tb_top/dut/U0_UART_TX/uart_tx_sva/busy_high_if_data_valid
-                     D:/Ali/Courses/Verification-Projects/UART-UVM/uart_tx_tb/uart_tx_assertions.sv(41)
-                                                        0         50        668          1        719          0           1 off
-
-=================================================================================
-=== Instance: /uart_top_tb_top/dut/U0_UART_RX/uart_rx_sva
-=== Design Unit: work.uart_rx_assertions
+=== Instance: /axi_seq_pkg
+=== Design Unit: work.axi_seq_pkg
 =================================================================================
 
 Assertion Coverage:
@@ -35,39 +11,9 @@ Assertion Coverage:
 Name                 File(Line)                   Failure      Pass     Vacuous    Disable    Attempt     Active Peak Active ATV
                                                   Count        Count    Count      Count      Count       Count  Count          
 --------------------------------------------------------------------------------------------------------------------------------
-/uart_top_tb_top/dut/U0_UART_RX/uart_rx_sva/uart_rx_reset_assertion
-                     D:/Ali/Courses/Verification-Projects/UART-UVM/uart_rx_tb/uart_rx_assertions.sv(33)
-                                                        0          1          0          0          1          0           1 off
-
-=================================================================================
-=== Instance: /uart_tx_seq_pkg
-=== Design Unit: work.uart_tx_seq_pkg
-=================================================================================
-
-Assertion Coverage:
-    Assertions                       1         1         0   100.00%
---------------------------------------------------------------------------------------------------------------------------------
-Name                 File(Line)                   Failure      Pass     Vacuous    Disable    Attempt     Active Peak Active ATV
-                                                  Count        Count    Count      Count      Count       Count  Count          
---------------------------------------------------------------------------------------------------------------------------------
-/uart_tx_seq_pkg/uart_tx_input_seq/body/Randomize_Uart_TX_item
-                     D:/Ali/Courses/Verification-Projects/UART-UVM/uart_tx_tb/seq_lib//uart_tx_input_seq.svh(21)
-                                                        0         50          0          0         50          0           0 off
-
-=================================================================================
-=== Instance: /uart_rx_seq_pkg
-=== Design Unit: work.uart_rx_seq_pkg
-=================================================================================
-
-Assertion Coverage:
-    Assertions                       1         1         0   100.00%
---------------------------------------------------------------------------------------------------------------------------------
-Name                 File(Line)                   Failure      Pass     Vacuous    Disable    Attempt     Active Peak Active ATV
-                                                  Count        Count    Count      Count      Count       Count  Count          
---------------------------------------------------------------------------------------------------------------------------------
-/uart_rx_seq_pkg/uart_rx_input_seq/body/Randomize_Uart_RX_item
-                     D:/Ali/Courses/Verification-Projects/UART-UVM/uart_rx_tb/seq_lib//uart_rx_input_seq.svh(22)
-                                                        0         50          0          0         50          0           0 off
+/axi_seq_pkg/axi_seq_c/body/Randomize_axi_master_item
+                     D:/Ali/Courses/Verification-Projects/AXI-uvm/tb/seq_lib//axi_seq_c.svh(21)
+                                                        0         18          0          0         18          0           0 off
 
 
 ASSERTION RESULTS:
@@ -75,27 +21,9 @@ ASSERTION RESULTS:
 Name                 File(Line)                   Failure      Pass     Vacuous    Disable    Attempt     Active Peak Active ATV
                                                   Count        Count    Count      Count      Count       Count  Count          
 --------------------------------------------------------------------------------------------------------------------------------
-/uart_top_tb_top/dut/U0_UART_TX/uart_tx_sva/uart_tx_reset_assertion
-                     D:/Ali/Courses/Verification-Projects/UART-UVM/uart_tx_tb/uart_tx_assertions.sv(30)
-                                                        0          1          0          0          1          0           1 off
-/uart_top_tb_top/dut/U0_UART_TX/uart_tx_sva/data_valid_high_1_clk
-                     D:/Ali/Courses/Verification-Projects/UART-UVM/uart_tx_tb/uart_tx_assertions.sv(35)
-                                                        0         50        668          1        719          0           1 off
-/uart_top_tb_top/dut/U0_UART_TX/uart_tx_sva/s_data_high_during_idle
-                     D:/Ali/Courses/Verification-Projects/UART-UVM/uart_tx_tb/uart_tx_assertions.sv(38)
-                                                        0        199        518          1        719          1           2 off
-/uart_top_tb_top/dut/U0_UART_TX/uart_tx_sva/busy_high_if_data_valid
-                     D:/Ali/Courses/Verification-Projects/UART-UVM/uart_tx_tb/uart_tx_assertions.sv(41)
-                                                        0         50        668          1        719          0           1 off
-/uart_top_tb_top/dut/U0_UART_RX/uart_rx_sva/uart_rx_reset_assertion
-                     D:/Ali/Courses/Verification-Projects/UART-UVM/uart_rx_tb/uart_rx_assertions.sv(33)
-                                                        0          1          0          0          1          0           1 off
-/uart_tx_seq_pkg/uart_tx_input_seq/body/Randomize_Uart_TX_item
-                     D:/Ali/Courses/Verification-Projects/UART-UVM/uart_tx_tb/seq_lib//uart_tx_input_seq.svh(21)
-                                                        0         50          0          0         50          0           0 off
-/uart_rx_seq_pkg/uart_rx_input_seq/body/Randomize_Uart_RX_item
-                     D:/Ali/Courses/Verification-Projects/UART-UVM/uart_rx_tb/seq_lib//uart_rx_input_seq.svh(22)
-                                                        0         50          0          0         50          0           0 off
+/axi_seq_pkg/axi_seq_c/body/Randomize_axi_master_item
+                     D:/Ali/Courses/Verification-Projects/AXI-uvm/tb/seq_lib//axi_seq_c.svh(21)
+                                                        0         18          0          0         18          0           0 off
 
 Total Coverage By Instance (filtered view): 100.00%
 

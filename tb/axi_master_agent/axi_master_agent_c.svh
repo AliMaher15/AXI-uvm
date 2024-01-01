@@ -9,13 +9,11 @@ class axi_master_agent_c#(DATA_WIDTH = 32) extends uvm_agent;
     axi_master_agent_seqr_c                    m_seqr;
 
     // Agent Analysis Ports
-    uvm_analysis_port #(axi_item)              axi_master_input_ap;
-    uvm_analysis_port #(axi_item)              axi_master_output_ap;
+    uvm_analysis_port #(axi_item_c)              axi_master_ap;
     
     function new(string name, uvm_component parent);
         super.new(name,parent);
-        axi_master_input_ap  = new("axi_master_input_ap", this);
-        axi_master_output_ap = new("axi_master_output_ap", this);
+        axi_master_ap  = new("axi_master_ap", this);
     endfunction : new
 
     //  Function: build_phase
@@ -29,7 +27,7 @@ endclass : axi_master_agent_c
 
 
 //  Task: pre_reset_phase
-task axi_master_agent_c::pre_reset_phase(uvm_phase phase));
+task axi_master_agent_c::pre_reset_phase(uvm_phase phase);
     if (m_seqr && m_driver) begin
         m_seqr.stop_sequences();
         ->m_driver.reset_driver;
@@ -59,8 +57,7 @@ endfunction: build_phase
 function void axi_master_agent_c::connect_phase(uvm_phase phase);
     super.connect_phase(phase);
 
-    m_in_monitor .input_ap .connect(uart_rx_input_ap);
-    m_out_monitor.output_ap.connect(uart_rx_output_ap);
+    m_monitor.axi_master_mon_ap.connect(axi_master_ap);
 
     if (m_cfg.active == UVM_ACTIVE) begin
         m_driver.seq_item_port.connect(m_seqr.seq_item_export);

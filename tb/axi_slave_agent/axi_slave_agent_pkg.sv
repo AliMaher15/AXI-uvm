@@ -3,6 +3,7 @@ package axi_slave_agent_pkg;
     //uvm pakage and macros
     import uvm_pkg::*;
     `include "uvm_macros.svh"
+    import axi_global_params_pkg::*;
 
     import axi_item_pkg::*;
 

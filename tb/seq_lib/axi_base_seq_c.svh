@@ -1,8 +1,8 @@
-class uart_rx_base_seq extends  uvm_sequence #(uvm_sequence_item);
+class axi_base_seq_c extends  uvm_sequence #(uvm_sequence_item);
 
-    `uvm_object_utils(uart_rx_base_seq)
+    `uvm_object_utils(axi_base_seq_c)
   
-    uart_rx_env_cfg m_cfg;
+    axi_env_cfg_c     m_cfg;
   
   
     function new(string name = "");
@@ -16,7 +16,7 @@ class uart_rx_base_seq extends  uvm_sequence #(uvm_sequence_item);
     endtask : body
   
   
-  endclass : uart_rx_base_seq
+  endclass : axi_base_seq_c
   
   
   

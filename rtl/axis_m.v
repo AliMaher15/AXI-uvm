@@ -24,19 +24,19 @@ module axis_m #(parameter DATA_WIDTH = 32)
     (         
               input aclk,
               input areset_n,
-              input [31:0] data,
+              input [DATA_WIDTH-1:0] data,
               input send,
               
               // axi sampling
               input tready,
               output reg tvalid,
               output tlast,
-              output reg [31:0] tdata,
+              output reg [DATA_WIDTH-1:0] tdata,
               
               output reg finish
     );
     
-    reg [31:0] data_buf;    // buffer to keep the data from change
+    reg [DATA_WIDTH-1:0] data_buf;    // buffer to keep the data from change
     always @(posedge send, negedge areset_n)
     begin
         if(~areset_n)

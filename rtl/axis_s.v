@@ -24,13 +24,13 @@ module axis_s#(parameter DATA_WIDTH = 32)
     (
               input areset_n,
               input aclk,
-              output reg [31:0] data,   // data that axis slave will receive
+              output reg [DATA_WIDTH-1:0] data,   // data that axis slave will receive
               input ready,      // user app is reafy to accept data, no slave can receive a data
               
               output reg tready,
               input tvalid,
               input tlast,
-              input [31:0] tdata,
+              input [DATA_WIDTH-1:0] tdata,
               
               output reg finish     // transaction is completed   
     );

@@ -1,26 +1,25 @@
 # Clocks
-add wave /uart_top_tb_top/rx_clk
-add wave /uart_top_tb_top/tx_clk
-add wave /uart_top_tb_top/UART_TOP_SYSTEM_IF/res_n
+add wave /axi_tb_top/clk
+add wave /axi_tb_top/rst_i/res_n
 
-# UART_RX Inputs
-add wave -group UART_RX_IN -color Magenta /uart_top_tb_top/UART_RX_IF/s_data_in \
-                            /uart_top_tb_top/UART_RX_IF/prescale_in \
-                            /uart_top_tb_top/UART_RX_IF/par_en_in \
-                            /uart_top_tb_top/UART_RX_IF/par_typ_in
+# AXI MASTER Inputs
+add wave -group AXI_M_IN -color Magenta /axi_tb_top/AXI_MASTER_IF/data_in \
+                            /axi_tb_top/AXI_MASTER_IF/send_in \
+                            /axi_tb_top/AXI_MASTER_IF/tready_in
                     
-# UART_RX Outputs
-add wave -group UART_RX_OUT -color Pink /uart_top_tb_top/UART_RX_IF/p_data_out \
-                            /uart_top_tb_top/UART_RX_IF/parity_error_out \
-                            /uart_top_tb_top/UART_RX_IF/stop_error_out \
-                            /uart_top_tb_top/UART_RX_IF/data_valid_out
+# AXI MASTER Outputs
+add wave -group AXI_M_OUT -color Pink /axi_tb_top/AXI_MASTER_IF/tvalid_out \
+                            /axi_tb_top/AXI_MASTER_IF/tlast_out \
+                            /axi_tb_top/AXI_MASTER_IF/tdata_out \
+                            /axi_tb_top/AXI_MASTER_IF/finish_out
 
-# UART_TX Inputs
-add wave -group UART_TX_IN -color Magenta /uart_top_tb_top/UART_TX_IF/p_data \
-                            /uart_top_tb_top/UART_TX_IF/data_valid \
-                            /uart_top_tb_top/UART_TX_IF/par_en \
-                            /uart_top_tb_top/UART_TX_IF/par_typ
+# AXI SLAVE Inputs
+add wave -group AXI_S_IN -color Magenta /axi_tb_top/AXI_SLAVE_IF/ready_in \
+                            /axi_tb_top/AXI_SLAVE_IF/tvalid_in \
+                            /axi_tb_top/AXI_SLAVE_IF/tlast_in \
+                            /axi_tb_top/AXI_SLAVE_IF/tdata_in
                     
-# UART_TX Outputs
-add wave -group UART_TX_OUT -color Pink /uart_top_tb_top/UART_TX_IF/busy \
-                            /uart_top_tb_top/UART_TX_IF/tx_out
+# AXI SLAVE Outputs
+add wave -group AXI_S_OUT -color Pink /axi_tb_top/AXI_SLAVE_IF/tready_out \
+                            /axi_tb_top/AXI_SLAVE_IF/data_out \
+                            /axi_tb_top/AXI_SLAVE_IF/finish_out

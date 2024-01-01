@@ -1,9 +1,5 @@
 // class: rst_drv_c
 class rst_driver_c extends uvm_driver;
-   `uvm_component_utils_begin(rst_driver_c)
-      `uvm_field_string(intf_name,            UVM_ALL_ON)
-      `uvm_field_int(reset_time_ps,           UVM_ALL_ON | UVM_DEC)
-   `uvm_component_utils_end
 
    // var: intf_name
    string  intf_name = "rst_i";
@@ -12,8 +8,13 @@ class rst_driver_c extends uvm_driver;
    // The length of time, in ps, that reset will stay active
    rand int reset_time_ps;
 
+   `uvm_component_utils_begin(rst_driver_c)
+      `uvm_field_string(intf_name,            UVM_ALL_ON)
+      `uvm_field_int(reset_time_ps,           UVM_ALL_ON | UVM_DEC)
+   `uvm_component_utils_end
+
    // Base constraints
-   constraint rst_cnstr { reset_time_ps inside {[1:1000000]}; }
+   constraint rst_cnstr { reset_time_ps inside {[1:100000]}; }
 
    // var: rst_vi
    // Reset virtual interface
@@ -35,9 +36,9 @@ class rst_driver_c extends uvm_driver;
    virtual task reset_phase(uvm_phase phase);
       phase.raise_objection(this);
       `uvm_info("rst", "Going down.", UVM_NONE)
-      rst_vi.rst_n <= 0;
+      rst_vi.res_n <= 0;
       #(reset_time_ps * 1ps);
-      rst_vi.rst_n <= 1;
+      rst_vi.res_n <= 1;
       `uvm_info("rst", "Going up.", UVM_NONE)
       phase.drop_objection(this);
    endtask : reset_phase
